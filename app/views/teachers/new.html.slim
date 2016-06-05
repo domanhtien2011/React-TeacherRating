@@ -1,0 +1,9 @@
+h1 Adding New Teacher
+.row
+  .well.col-md-8.col-md-offset-2
+    = form_for @teacher do |f|
+      = f.label :full_name
+      = f.text_field :full_name
+      = f.label :department
+      = f.text_field :department
+      = f.submit 'Create New Teacher', class: 'btn btn-success'

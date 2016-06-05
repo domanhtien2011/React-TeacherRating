@@ -1,0 +1,23 @@
+nav.navbar.navbar-light.bg-faded.exciting-navbar
+  button.navbar-toggler.hidden-sm-up[type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"]
+    |  ☰
+  #exCollapsingNavbar2.collapse.navbar-toggleable-xs
+    = link_to 'English School Rating', root_url, class: 'navbar-brand'
+    ul.nav.navbar-nav
+      li.nav-item.active
+        = link_to root_url, class: "nav-link" do
+          i.fa.fa-home
+      - if user_signed_in?
+
+      - else
+        li.nav-item
+          = link_to new_user_registration_path, class: "nav-link" do
+            i.fa.fa-user-plus
+      - if user_signed_in?
+        li.nav-item
+          = link_to destroy_user_session_path, method: :delete, class: "nav-link" do
+            i.fa.fa-sign-out
+      - else
+        li.nav-item
+          = link_to new_user_session_path, class: "nav-link" do
+            i.fa.fa-user
